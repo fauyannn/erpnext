@@ -92,11 +92,11 @@ class JobCard(Document):
 		if not self.time_logs:
 			frappe.throw(_("Time logs are required for job card {0}").format(self.name))
 
-		if self.total_completed_qty <= 0.0:
-			frappe.throw(_("Total completed qty must be greater than zero"))
+		# if self.total_completed_qty <= 0.0:
+		# 	frappe.throw(_("Total completed qty must be greater than zero"))
 
-		if self.total_completed_qty > self.for_quantity:
-			frappe.throw(_("Total completed qty can not be greater than for quantity"))
+		# if self.total_completed_qty > self.for_quantity:
+		# 	frappe.throw(_("Core Total completed qty can not be greater than for quantity"))
 
 	def update_work_order(self):
 		if not self.work_order:
