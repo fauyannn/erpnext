@@ -330,9 +330,9 @@ class StockEntry(StockController):
 			completed_qty = d.completed_qty + (allowance_percentage/100 * d.completed_qty)
 			if total_completed_qty > flt(completed_qty):
 				job_card = frappe.db.get_value('Job Card', {'operation_id': d.name}, 'name')
-				if not job_card:
-					frappe.throw(_("Work Order {0}: Job Card not found for the operation {1}")
-						.format(self.work_order, d.operation))
+				# if not job_card:
+				# 	frappe.throw(_("Work Order {0}: Job Card not found for the operation {1}")
+				# 		.format(self.work_order, d.operation))
 
 				work_order_link = frappe.utils.get_link_to_form('Work Order', self.work_order)
 				job_card_link = frappe.utils.get_link_to_form('Job Card', job_card)
